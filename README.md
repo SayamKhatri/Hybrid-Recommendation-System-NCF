@@ -31,9 +31,9 @@ A deep learning-based recommendation system combining **Neural Collaborative Fil
    pip install -r requirements.txt
    ```
   
-3. Download the MovieLens 25M dataset:
+3. Download the MovieLens 10M dataset:
    ```bash
-    Place files in data/ (see data/README.md for details).
+    Place files in data/ 
     ```
   
   
