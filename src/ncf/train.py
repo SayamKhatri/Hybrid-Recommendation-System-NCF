@@ -95,11 +95,11 @@ def data_prep(df_ratings):
     val_movies_missing = set(val_df['movie_id_encoded'].unique()) - all_movies
     print("Validation movies missing in training:", len(val_movies_missing))
 
-    return train_data_final, val_df_with_neg
+    return train_data_final, val_df_with_neg, train_df, val_df
 
 
 def train_ncf(df_ratings):
-    train_data_final, val_df_with_neg = data_prep(df_ratings)
+    train_data_final, val_df_with_neg , train_df, val_df= data_prep(df_ratings)
 
     # Prepare training dataset
     train_users = np.array(train_data_final['user_id_encoded'])
@@ -138,3 +138,5 @@ def train_ncf(df_ratings):
 
     sys.path.append(os.path.abspath(os.path.join('..')))
     model.save('/models/ncf_model.h5')
+
+    return model, train_data_final, train_df, val_df
