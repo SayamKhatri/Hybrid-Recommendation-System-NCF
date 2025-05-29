@@ -35,3 +35,5 @@ def ncf_model(train_data_final):
     model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
     model.summary()
+
+    return model
